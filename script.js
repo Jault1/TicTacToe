@@ -122,7 +122,11 @@ function sendRandoMessage() {
     } else if (turn == 6) {
         smackTalk = "It's ok, you're Probably used to losing!"
     } else if (turn == 7) {
-        smackTalk = "You make a pet rock look smart! 7"
+        smackTalk = "You make a pet rock look smart!"
+    } else if (turn == 8) {
+        smackTalk = "You really think you're going to make a career of this?!"
+    } else if (turn == 9) {
+        smackTalk = "Sass left over - please ask!"        
     } else {
         // do nothing
     }
