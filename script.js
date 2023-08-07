@@ -149,11 +149,8 @@ function markWin(a, b, c) {
 function youWon(whoWon) {
     //alert(whoWon + ", YOU WON!")
     $('#myModal').modal('show');
-
-    $("#myModal .modal-title").text(whoWon);
-
-    $("#myModal .modal-body").text('YOU WON!');
-
+    $("#myModal .modal-title").text("");
+    $("#myModal .modal-body").text( whoWon + ', you won!');
     setTimeout(refreshOnGameEnd, 5000);
 }
 
