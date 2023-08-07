@@ -4,8 +4,10 @@ let turn = 1;
 function play(myID) {
     let myVal = document.getElementById("" + myID + "").value;
     myVal = String(myVal)
+// alert(myVal);
+// alert(typeof myVal);
 
-    if (myVal != "-") {
+    if (myVal == "X" || myVal == "O") {
         alert("This square has been taken, dummy. Do you understand how tic tac toe works? Go again.")
         return
     }
@@ -13,9 +15,11 @@ function play(myID) {
     if (whosTurn == "X") {
         document.getElementById("" + myID + "").value = "X";
         whosTurn = "O"
+        document.getElementById("myPlayer").innerHTML = "O's turn.";
     } else {
         document.getElementById("" + myID + "").value = "O";
         whosTurn = "X";
+        document.getElementById("myPlayer").innerHTML = "X's turn.";
     }
     winCheck(myID);
 }
@@ -131,6 +135,7 @@ function sendRandoMessage() {
         // do nothing
     }
     turn += 1;
+
     document.getElementById("mySmackTalk").innerHTML = smackTalk;
 }
 
@@ -142,8 +147,14 @@ function markWin(a, b, c) {
 
 // Send an alert when someone wins
 function youWon(whoWon) {
-    alert(whoWon + ", YOU WON!")
-    setTimeout(refreshOnGameEnd, 3000);
+    //alert(whoWon + ", YOU WON!")
+    $('#myModal').modal('show');
+
+    $("#myModal .modal-title").text(whoWon);
+
+    $("#myModal .modal-body").text('YOU WON!');
+
+    setTimeout(refreshOnGameEnd, 5000);
 }
 
 function refreshOnGameEnd() {

@@ -13,9 +13,8 @@ H1 {
 }
 
 body {
-  background-color: white;
   font-family: 'Audiowide', cursive;
-  /* Padding-left: 20px; */
+  font-size: 18px;
   background: linear-gradient(#00afb9, #fff);
   /* background-repeat: no-repeat;
     background-attachment: fixed; */
@@ -25,25 +24,31 @@ body {
   background-attachment: fixed;
   background-position: bottom;
   background-size: 85%;
-  color: #ffffff;
+  color: #E6E8E6;
 }
 
-.bg-header {
-  background-color: #1d3557;
+.bg-body {
+  background-color: #5EA0FD;
+}
+
+.modal-content {
+  background-color: #D2CAC6 !important;
+  color: #000000 !important;
+
 }
 
 .bg-header h1 {
-  color: #f1faee;
+  color: #E6E8E6;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
 .bg-header p {
-  color: #f1faee;
+  color: #E6E8E6;
 }
 
 nav {
-  background-color: #457b9d;
+  background-color: #84B7FE;
 }
 
 .content {
@@ -65,14 +70,12 @@ h1 {
 
 .board {
   Padding: 20px;
-  background: linear-gradient(#a8dadc76, #1d3557de);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-color: #626a7de0;
 }
 
 #mySmackTalk {
-  background-color: #f1faeeae;
-  color: #e63946;
+  background-color: #84B7FE;
+  color: #ffffff;
   font-weight: bolder;
   padding: 20px;
   margin-top: 30px;
@@ -84,8 +87,12 @@ input {
   text-align: center;
 }
 
+input:hover {
+  background-color: #D2CAC6;
+}
+
 .footer {
-  background-color: #1d3557 !important;
+  background-color: #87B9FD !important;
   color: #ffffff;
   font-size: 12px;
   padding: 15px;
@@ -94,9 +101,9 @@ input {
 @media (min-width: 320px) {
   .col-1 {
    width: 75px;
-   margin-right: 10px;
+   margin-right: 2px;
    height: 75px;
-   margin-bottom: 10px;
+   margin-bottom: 2px;
    text-align: center;
  }
 
@@ -118,9 +125,9 @@ input {
 @media (min-width: 468px) {
   .col-1 {
     width: 100px;
-    margin-right: 10px;
+    margin-right: 2px;
     height: 100px;
-    margin-bottom: 10px;
+    margin-bottom: 2px;
     text-align: center;
   }
 
@@ -140,9 +147,9 @@ input {
 @media (min-width: 600px) {
   .col-1 {
     width: 100px;
-    margin-right: 10px;
+    margin-right: 2px;
     height: 100px;
-    margin-bottom: 10px;
+    margin-bottom: 2px;
     text-align: center;
   }
 
@@ -157,9 +164,9 @@ input {
 @media (min-width: 768) {
   .col-1 {
     width: 75px;
-    margin-right: 5px;
+    margin-right: 2px;
     height: 75px;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
     text-align: center;
   }
 
