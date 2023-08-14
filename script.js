@@ -1,17 +1,22 @@
-let whosTurn = "X"
-let turn = 1;
+let whosTurn = "X"  // This tracks whose play it is
+let turn = 1;  // This keeps track of the play number for peanut gallery comments
 
+// Pass the ID of the square that was played.
 function play(myID) {
     let myVal = document.getElementById("" + myID + "").value;
     myVal = String(myVal)
+// Get the value
 // alert(myVal);
 // alert(typeof myVal);
 
+// See if the square was already played
     if (myVal == "X" || myVal == "O") {
         alert("This square has been taken, dummy. Do you understand how tic tac toe works? Go again.")
         return
     }
 
+// See who is playing so you know whether to place an X or O in the square.
+// Write who's turn it is
     if (whosTurn == "X") {
         document.getElementById("" + myID + "").value = "X";
         whosTurn = "O"
@@ -21,11 +26,15 @@ function play(myID) {
         whosTurn = "X";
         document.getElementById("myPlayer").innerHTML = "X's turn.";
     }
+
+    // Check to see if there is a winner
     winCheck(myID);
 }
 
 function winCheck(myID) {
-    // checkInput(myID); // No longer needed
+// Check the win patterns after each play; 3 rows, 3 columns, 2 diagonal * 2 (X & O)
+// If no winner is found, call sendRandoMessage()
+// If I find a winner, call markWin() and youWon().
 
     /* ROWS X */
     if ((document.getElementById("b1").value == "X") && (document.getElementById("b2").value == "X") && (document.getElementById("b3").value == "X")) {
@@ -139,6 +148,7 @@ function sendRandoMessage() {
     document.getElementById("mySmackTalk").innerHTML = smackTalk;
 }
 
+// Pass in the winning squares
 function markWin(a, b, c) {
     document.getElementById("" + a + "").value = "-";
     document.getElementById("" + b + "").value = "-";
@@ -146,14 +156,17 @@ function markWin(a, b, c) {
 }
 
 // Send an alert when someone wins
+// Set a five second timeout
+// Call refreshOnGameEnd
 function youWon(whoWon) {
-    //alert(whoWon + ", YOU WON!")
+    // alert(whoWon + ", YOU WON!")
     $('#myModal').modal('show');
     $("#myModal .modal-title").text("");
     $("#myModal .modal-body").text( whoWon + ', you won!');
     setTimeout(refreshOnGameEnd, 5000);
 }
 
+// Restart the game by reloading the page
 function refreshOnGameEnd() {
     location.reload();
 }
